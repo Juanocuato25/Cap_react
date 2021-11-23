@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.historial h1{
+    color: white;
+}
+
+.personajes{
+    display: flex;
+    width: 100%;
+    height: 480px;
+    background-color: #870000;
+}
+
+.tabla-per{
+    margin: 50px 0 0 70px;
+    color: white;
+    font-size: 12px;
+}
+
+.tabla-personaje{
+    width: 50%;
+    height: 420px;
+}
+
+.div-forms .registro{
+    margin: 0 0 0 80px;
+}
+
+.div-forms{
+    width: 50%;
+    background-color: 	#a5a5ab;
+}
+
+.formulario{
+    margin: 50px 0 0 0;
+}
+
+label{
+    font-size: 20px;
+}
+
+.nombre{
+    width: 200px;
+    height: 20px;
+    border-radius: 5px;
+}
+
+select{
+    width: 200px;
+    height: 25px;
+    border-radius: 5px;
+    margin-bottom: 16px;
+}
+
+.btn-submit{
+    width: 130px;
+    height: 25px;
+    border-radius: 5px;
+    font-size: 17px;
+    background-color: blue;
+    color: white;
+    margin-top: 40px;
+}

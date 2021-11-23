@@ -1,23 +1,45 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useState } from "react";
+import "./App.css";
+import Nav from "./components/nav/nav";
+import Mision from "./components/misiones/mision";
+import Personajes from "./components/personajes/personajes";
 
 function App() {
+
+  const[misiones, setMisiones] = useState([])
+  const[personajes, setPersonajes] = useState([])
+
+  const urlMision = "http://localhost:3001/misiones";
+  const urlPersonajes = "http://localhost:3001/aliados";
+
+
+  const fetchMision = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((dataMision) => setMisiones(dataMision.Misiones)) 
+      .catch((error) => console.log("Error: ", error));
+  };
+
+  console.log(misiones);
+
+  const fetchPersonajes = (url) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data) => setPersonajes(data.personaje)) 
+      .catch((error) => console.log("Error: ", error));
+  };
+
+ 
+  useEffect(() => {
+   fetchMision(urlMision);
+   fetchPersonajes(urlPersonajes);
+  },[]);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Nav />
+      <Mision misiones={misiones}/>
+      <Personajes personajes={personajes}/>
     </div>
   );
 }

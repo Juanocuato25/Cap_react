@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+h1{
+    color: white;
+}
+
+.misiones{
+    width: 100%;
+    height: 350px;
+    background-color: #002d5c;
+}
+
+table{
+    margin: 80px 0 0 85px;
+    color: white;
+}
